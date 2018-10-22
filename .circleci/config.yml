@@ -40,12 +40,12 @@ jobs:
     # run tests!
     - run:
         name: run tests
-        command: bundle exec cucumber
+        command: bundle exec cucumber -f html -o cucumber.html
 
 
     # collect reports
-#    - store_test_results:
-#        path: /tmp/test-results
-#    - store_artifacts:
-#        path: /tmp/test-results
-#        destination: test-results
+    - store_test_results:
+        path: cucumber.html
+    - store_artifacts:
+        path: cucumber.html
+        destination: test-results
